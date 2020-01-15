@@ -94,3 +94,7 @@ sudo docker exec -t -i zm /bin/bash
 http://localhost:8080/zm/
 
 (Note:- Each time , you start the container ,you will have to run " sudo docker exec -t -i zm /bin/bash" after "sudo docker start zm" to get the ZM Console) (To use msmtp for emailing please refer https://hub.docker.com/repository/docker/bkjaya1952/docker-zoneminder-master)
+
+For more details on installation please refer the following link
+
+https://bkjaya.wordpress.com/2020/01/14/how-to-install-zoneminder-master-docker-v1-33-16-with-mysql-8-msmtp-on-ubuntu-19-10-eoan-ermine/
