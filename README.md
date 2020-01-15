@@ -98,3 +98,11 @@ http://localhost:8080/zm/
 For more details on installation please refer the following link
 
 https://bkjaya.wordpress.com/2020/01/14/how-to-install-zoneminder-master-docker-v1-33-16-with-mysql-8-msmtp-on-ubuntu-19-10-eoan-ermine/
+
+
+For more details on composing the image and pushing to the docker hub can be obtained from the following mya blog post
+
+https://bkjaya.wordpress.com/2020/01/15/how-to-build-a-zoneminder-master-docker-image-with-mysql-8-msmtp/
+
+
+Any suggstions on improving the Dockerfile and entrypoint.sh are welcome.
