@@ -31,6 +31,8 @@ Make changes as follows)
 
 chown -R www-data:www-data /var/run/zm
 
+sed -i "228i ServerName localhost" /etc/apache2/apache2.conf
+
 mysql
 
 CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
