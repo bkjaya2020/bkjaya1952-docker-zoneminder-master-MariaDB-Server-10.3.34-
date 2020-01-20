@@ -35,7 +35,7 @@ mysql
 
 CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 
-GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON zm.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES ;
 
