@@ -1,5 +1,5 @@
-# bkjaya1952-docker-zoneminder-master-mysq:l81.33.16
-Zoneminder-master , v1.33.16. docker image with Mysql 8 &amp; MSMTP
+# bkjaya1952-docker-zoneminder-master-mysql8:latest
+Zoneminder-master , latest. docker image with Mysql 8 &amp; MSMTP
 
 
 This image has been created on ubuntu:eoan with zoneminder-master/ubuntu disco main
