@@ -15,29 +15,27 @@ To create a Zonminder-master docker container (name zm)with mysql 8 & msmtp
 
 On the Ubuntu terminal enter the following commands
 
-sudo docker create -t -p 8080:80 --shm-size=4096m --name zm --privileged=true bkjaya1952/docker-zoneminder-master-mysql8:tag
+<code>sudo docker create -t -p 8080:80 --shm-size=4096m --name zm --privileged=true bkjaya1952/docker-zoneminder-master-mysql8:tag
 
-sudo docker start zm
+sudo docker start zm</code>
 
 (You will have to configure the running zm container for mysql 8 ,zm data base and make some changes to start apache and zoneminder during the first run .)
 
-sudo docker exec -t -i zm /bin/bash
+<code>sudo docker exec -t -i zm /bin/bash</code>
 
-(Now you will be with in the zm container.
+(Now  you will be with in the zm container.
 
 Make changes as follows)
 
-/etc/init.d/mysql start
+<code>/etc/init.d/mysql start
 
 chown -R www-data:www-data /var/run/zm
-
-sed -i "228i ServerName localhost" /etc/apache2/apache2.conf
 
 mysql
 
 CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 
-GRANT ALL PRIVILEGES ON . TO 'admin'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES ;
 
@@ -59,52 +57,60 @@ quit
 
 mysqladmin -uroot -p reload
 
+service apache2 start
+
 service apache2 reload
 
 exit
 
-(As the apache service and zoneminder do not in running condition , when the zm container is started , we will have to edit the file "/etc/bash.bashrc" . For editing bash.bashrc is copied to the host and copied back to the container "zm" after making changes as follows. You will have to make these changes at the first time running only. )
+apt install vim
+
+vim /etc/apache2/apache2.conf
+
+ Enter the following line at the bottom of the opened file and save the file by entering :x
+
+ServerName localhost</code>
+
+(As the apache service and zoneminder do not in running condition , when the zm container is started , we will have to edit the file "/etc/bash.bashrc" . For editing bash.bashrc is copied to the host and copied back to the container "zm" after making changes as follows. You will have to make these changes at the first time running only.  )
+
+Note:- bash.bashrc file editing is not necessary for the   bkjaya1952/docker-zoneminder-master-mysql8:1.33.16e 
 
 (Open the Ubuntu terminal at the host)
 
-sudo docker cp zm:/etc/bash.bashrc ~/Downloads ( Here i have copied the file to the Downloads folder of the computer)
+<code>sudo docker cp zm:/etc/bash.bashrc ~/Downloads </code> 
+( Here i have copied the file to the Downloads folder of the computer)
 
-(If go the Downloads folder, you can see the copied "bash.bashrc" file)
+(If go the Downloads folder, you can  see the copied "bash.bashrc" file)
 
 (In order to make changes to "bash.bashrc")
 
-sudo chmod -R 777 ~/Downloads/bash.bashrc
+<code>sudo chmod -R 777 ~/Downloads/bash.bashrc
 
-sudo gedit ~/Downloads/bash.bashrc
+sudo gedit ~/Downloads/bash.bashrc</code>
 
 (Now enter the following two lines at the bottom of the opened "bash.bashrc" file and save.)
 
-/etc/init.d/apache2 start
+<code>/etc/init.d/apache2 start
 
-/usr/bin/zmpkg.pl start
+/usr/bin/zmpkg.pl start</code>
 
-(To copy back the edited "bash.bashrc" to /etc/ of the container "zm" , run the following command on the terminal)
+(To copy back the edited "bash.bashrc" to /etc/  of the container "zm" , run the following command on the terminal)
 
-sudo docker cp ~/Downloads/bash.bashrc zm:/etc/
+<code>sudo docker cp ~/Downloads/bash.bashrc zm:/etc/</code>
 
 (Now you can restart the container to see whether the zoneminder is active as follows)
 
-sudo docker restart zm
+<code>sudo docker restart zm
 
-sudo docker exec -t -i zm /bin/bash
+sudo docker exec -t -i zm /bin/bash</code>
 
-http://localhost:8080/zm/
+<code>http://localhost:8080/zm/</code>
 
-(Note:- Each time , you start the container ,you will have to run " sudo docker exec -t -i zm /bin/bash" after "sudo docker start zm" to get the ZM Console) (To use msmtp for emailing please refer https://hub.docker.com/repository/docker/bkjaya1952/docker-zoneminder-master)
+(Note:- Each time , you start the container ,you will have to run " sudo docker exec -t -i zm /bin/bash"  after "sudo docker start zm"  to get the ZM Console)
 
-For more details on installation please refer the following link
+(To use msmtp for emailing please refer https://hub.docker.com/repository/docker/bkjaya1952/docker-zoneminder-master)
 
-https://bkjaya.wordpress.com/2020/01/14/how-to-install-zoneminder-master-docker-v1-33-16-with-mysql-8-msmtp-on-ubuntu-19-10-eoan-ermine/
+( The procedure of  composing an image can be obtained from the following links
 
+https://bkjaya.wordpress.com/2020/01/15/how-to-build-a-zoneminder-master-docker-image-with-mysql-8-msmtp/  )
 
-For more details on composing the image and pushing to the docker hub can be obtained from the following mya blog post
-
-https://bkjaya.wordpress.com/2020/01/15/how-to-build-a-zoneminder-master-docker-image-with-mysql-8-msmtp/
-
-
-Any suggstions on improving the Dockerfile and entrypoint.sh are welcome.
