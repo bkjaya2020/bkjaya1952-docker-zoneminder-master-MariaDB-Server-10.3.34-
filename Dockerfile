@@ -42,7 +42,7 @@ RUN cp /usr/share/php7.3-mysql/mysql/*.ini /etc/php/7.3/mods-available/
  
 # Set our volumes before we attempt to configure apache
 VOLUME /var/cache/zoneminder/events /var/lib/mysql /var/log/zm /var/run/zm
-RUN chown -R www-data:www-data /var/run/zm
+
 
 RUN chmod 740 /etc/zm/zm.conf \
  && chown root:www-data /etc/zm/zm.conf \
@@ -51,8 +51,11 @@ RUN chmod 740 /etc/zm/zm.conf \
  && a2enconf zoneminder \
  && a2enmod rewrite \
  && chown -R www-data:www-data /usr/share/zoneminder/ \
- && ln -s /usr/bin/msmtp /usr/sbin/sendmail
-
+ && ln -s /usr/bin/msmtp /usr/sbin/sendmail \
+ && sed -i "228i ServerName localhost" /etc/apache2/apache2.conf \
+ && sed -i "956i date.timezone = Asia/Colombo" /etc/php/7.3/apache2/php.ini \
+ && chown -R www-data:www-data /var/run/zm
+RUN /etc/init.d/apache2 start
 # Expose http port
 EXPOSE 80
 
