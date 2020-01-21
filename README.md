@@ -88,9 +88,11 @@ Note:- bash.bashrc file editing is not necessary for the   bkjaya1952/docker-zon
 
 sudo gedit ~/Downloads/bash.bashrc</code>
 
-(Now enter the following two lines at the bottom of the opened "bash.bashrc" file and save.)
+(Now enter the following three lines at the bottom of the opened "bash.bashrc" file and save.)
 
-<code>/etc/init.d/apache2 start
+<code>/etc/init.d/mysql start
+ 
+ /etc/init.d/apache2 start
 
 /usr/bin/zmpkg.pl start</code>
 
