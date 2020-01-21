@@ -61,15 +61,15 @@ service apache2 start
 
 service apache2 reload
 
-exit
-
 apt install vim
 
 vim /etc/apache2/apache2.conf
 
  Enter the following line at the bottom of the opened file and save the file by entering :x
 
-ServerName localhost</code>
+ServerName localhost
+
+exit</code>
 
 (As the apache service and zoneminder do not in running condition , when the zm container is started , we will have to edit the file "/etc/bash.bashrc" . For editing bash.bashrc is copied to the host and copied back to the container "zm" after making changes as follows. You will have to make these changes at the first time running only.  )
 
