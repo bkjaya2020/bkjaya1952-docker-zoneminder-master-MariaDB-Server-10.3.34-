@@ -61,15 +61,22 @@ service apache2 start
 
 service apache2 reload
 
-apt install vim
+exit</code>
 
-vim /etc/apache2/apache2.conf
 
- Enter the following line at the bottom of the opened file and save the file by entering :x
+sudo docker cp zm:/etc/apache2/apache2.conf ~/Downloads
+
+sudo chmod -R 777 ~/Downloads/apache2.conf
+
+sudo gedit ~/Downloads/apache2.conf
+
+Enter the following line at the bottom of the opened file and save the file 
 
 ServerName localhost
 
-exit</code>
+sudo docker cp ~/Downloads/apache2.conf zm:/etc/apache2/apache2.conf
+
+
 
 (As the apache service and zoneminder do not in running condition , when the zm container is started , we will have to edit the file "/etc/bash.bashrc" . For editing bash.bashrc is copied to the host and copied back to the container "zm" after making changes as follows. You will have to make these changes at the first time running only.  )
 
