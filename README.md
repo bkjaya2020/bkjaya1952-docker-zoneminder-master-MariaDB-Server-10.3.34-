@@ -2,7 +2,7 @@
 Zoneminder-master , latest. docker image with Mysql 8 &amp; MSMTP
 
 
-This image has been created on ubuntu:eoan with zoneminder-master/ubuntu disco main
+This image has been created on ubuntu:eoan with zoneminder-master/ubuntu eoan main
 To pull the Repository from the dockerhub
 please refer the following link
 
