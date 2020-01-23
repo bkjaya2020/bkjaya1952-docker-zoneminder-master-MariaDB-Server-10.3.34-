@@ -110,10 +110,25 @@ sudo gedit ~/Downloads/bash.bashrc</code>
 (Now you can restart the container to see whether the zoneminder is active as follows)
 
 <code>sudo docker restart zm
-
-sudo docker exec -t -i zm /bin/bash</code>
+ 
+ sudo docker exec -t -i zm /bin/bash</code>
 
 <code>http://localhost:8080/zm/</code>
+
+Note:- If you find any timezone mismatch in zoneminder logs , correct it as follows.( ie for America/New_York )
+
+On the ubuntu terminal
+
+<code>sudo docker start zm
+
+sudo docker exec -t -i zm /bin/bash
+
+dpkg-reconfigure tzdata
+
+The edit your timezone
+
+exit</code>
+
 
 (Note:- Each time , you start the container ,you will have to run " sudo docker exec -t -i zm /bin/bash"  after "sudo docker start zm"  to get the ZM Console)
 
