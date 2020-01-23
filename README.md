@@ -125,7 +125,7 @@ sudo docker exec -t -i zm /bin/bash
 
 dpkg-reconfigure tzdata
 
-The edit your timezone
+Then edit your timezone
 
 exit</code>
 
