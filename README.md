@@ -31,30 +31,29 @@ Make changes as follows)
 
 chown -R www-data:www-data /var/run/zm</code>
 
-mysql
+<code>mysql</code>
 
-<code>CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '';</code>
+<code>CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 
-<code/>GRANT ALL PRIVILEGES ON zm.* TO 'admin'@'localhost' WITH GRANT OPTION;</code>
+GRANT ALL PRIVILEGES ON zm.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
-<code>FLUSH PRIVILEGES ;</code>
-
-quit
-
-<code>mysqladmin -uroot -p reload<code>
-
-
-<code>mysql -uroot -p < /usr/share/zoneminder/db/zm_create.sql<code>
-
-mysql
-
-<code>CREATE USER 'zmuser'@localhost IDENTIFIED WITH mysql_native_password BY 'zmpass';</code>
-
-<code>GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;</code>
-
-<code>FLUSH PRIVILEGES ;</code>
+FLUSH PRIVILEGES ;</code>
 
 <code>quit
+
+mysqladmin -uroot -p reload
+
+mysql -uroot -p < /usr/share/zoneminder/db/zm_create.sql
+
+mysql
+
+CREATE USER 'zmuser'@localhost IDENTIFIED WITH mysql_native_password BY 'zmpass';
+
+GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES ;
+
+quit
 
 mysqladmin -uroot -p reload
 
@@ -65,17 +64,17 @@ service apache2 reload
 exit</code>
 
 
-<code>sudo docker cp zm:/etc/apache2/apache2.conf ~/Downloads
+sudo docker cp zm:/etc/apache2/apache2.conf ~/Downloads
 
 sudo chmod -R 777 ~/Downloads/apache2.conf
 
-sudo gedit ~/Downloads/apache2.conf</code>
+sudo gedit ~/Downloads/apache2.conf
 
 Enter the following line at the bottom of the opened file and save the file 
 
-<code>ServerName localhost
+ServerName localhost
 
-sudo docker cp ~/Downloads/apache2.conf zm:/etc/apache2/apache2.conf</code>
+sudo docker cp ~/Downloads/apache2.conf zm:/etc/apache2/apache2.conf
 
 
 
@@ -138,4 +137,3 @@ exit</code>
 ( The procedure of  composing an image can be obtained from the following links
 
 https://bkjaya.wordpress.com/2020/01/15/how-to-build-a-zoneminder-master-docker-image-with-mysql-8-msmtp/  )
-
