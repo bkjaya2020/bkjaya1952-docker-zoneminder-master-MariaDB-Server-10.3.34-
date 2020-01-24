@@ -29,31 +29,32 @@ Make changes as follows)
 
 <code>/etc/init.d/mysql start
 
-chown -R www-data:www-data /var/run/zm
+chown -R www-data:www-data /var/run/zm</code>
 
 mysql
 
-CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+<code>CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY '';</code>
 
-GRANT ALL PRIVILEGES ON zm.* TO 'admin'@'localhost' WITH GRANT OPTION;
+<code/>GRANT ALL PRIVILEGES ON zm.* TO 'admin'@'localhost' WITH GRANT OPTION;</code>
 
-FLUSH PRIVILEGES ;
+<code>FLUSH PRIVILEGES ;</code>
 
 quit
 
-mysqladmin -uroot -p reload
+<code>mysqladmin -uroot -p reload<code>
 
-mysql -uroot -p < /usr/share/zoneminder/db/zm_create.sql
+
+<code>mysql -uroot -p < /usr/share/zoneminder/db/zm_create.sql<code>
 
 mysql
 
-CREATE USER 'zmuser'@localhost IDENTIFIED WITH mysql_native_password BY 'zmpass';
+<code>CREATE USER 'zmuser'@localhost IDENTIFIED WITH mysql_native_password BY 'zmpass';</code>
 
-GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;
+<code>GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;</code>
 
-FLUSH PRIVILEGES ;
+<code>FLUSH PRIVILEGES ;</code>
 
-quit
+<code>quit
 
 mysqladmin -uroot -p reload
 
