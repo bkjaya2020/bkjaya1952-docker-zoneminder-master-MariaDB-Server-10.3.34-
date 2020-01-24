@@ -64,17 +64,17 @@ service apache2 reload
 exit</code>
 
 
-sudo docker cp zm:/etc/apache2/apache2.conf ~/Downloads
+<code>sudo docker cp zm:/etc/apache2/apache2.conf ~/Downloads
 
 sudo chmod -R 777 ~/Downloads/apache2.conf
 
-sudo gedit ~/Downloads/apache2.conf
+sudo gedit ~/Downloads/apache2.conf</code>
 
 Enter the following line at the bottom of the opened file and save the file 
 
-ServerName localhost
+<code>ServerName localhost
 
-sudo docker cp ~/Downloads/apache2.conf zm:/etc/apache2/apache2.conf
+sudo docker cp ~/Downloads/apache2.conf zm:/etc/apache2/apache2.conf</code>
 
 
 
