@@ -54,5 +54,7 @@ RUN /etc/init.d/apache2 start
 EXPOSE 80
 
 COPY entrypoint.sh /entrypoint.sh
+COPY bash.bashrc /etc/bash.bashrc
+COPY apache2.conf /etc/apache2/apache2.conf
 RUN chmod 777 /entrypoint.sh 
 ENTRYPOINT ["/entrypoint.sh"]
