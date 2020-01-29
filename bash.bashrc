@@ -70,5 +70,6 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
 	}
 fi
 
+/etc/init.d/mysql start
 /etc/init.d/apache2 start
 /usr/bin/zmpkg.pl start
