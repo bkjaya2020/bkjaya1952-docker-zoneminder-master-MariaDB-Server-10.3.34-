@@ -39,7 +39,7 @@ Make changes as follows)
 
 <code>quit</code>
 
-m<code>ysqladmin -uroot -p reload</code>
+<code>mysqladmin -uroot -p reload</code>
 
 <code>exit</code>
 
