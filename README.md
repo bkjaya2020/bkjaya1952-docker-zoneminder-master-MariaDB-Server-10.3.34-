@@ -19,7 +19,7 @@ On the Ubuntu terminal enter the following commands
 
 <code>sudo docker start zm</code>
 
-(You will have to configure the running zm container for mysql 8 ,zm data base and make some changes to start apache and zoneminder during the first run .)
+(You will have to configure the running zm container for mysql 8 ,zm data base and edit the timezone  during the first run .)
 
 <code>sudo docker exec -t -i zm /bin/bash</code>
 
