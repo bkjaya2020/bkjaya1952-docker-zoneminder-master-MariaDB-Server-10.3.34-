@@ -41,28 +41,15 @@ Make changes as follows)
 
 <code>mysqladmin -uroot -p reload</code>
 
-<code>exit</code>
-
-<code>sudo docker restart zm</code>
- 
- <code>sudo docker exec -t -i zm /bin/bash</code>
-
-<code>http://localhost:8080/zm/</code>
-
-Note:- If you find any timezone mismatch in zoneminder logs , correct it as follows.( ie for America/New_York )
-
-On the ubuntu terminal
-
-<code>sudo docker exec -t -i zm /bin/bash
-
 <code>dpkg-reconfigure tzdata</code>
 
 Then edit your timezone
 
 <code>exit</code>
 
+<code>sudo docker restart zm</code>
 
-(Note:- Each time , you start the container ,you will have to run " sudo docker exec -t -i zm /bin/bash"  after "sudo docker start zm"  to get the ZM Console)
+<code>http://localhost:8080/zm/</code>
 
 (To use msmtp for emailing please refer https://hub.docker.com/repository/docker/bkjaya1952/docker-zoneminder-master)
 
