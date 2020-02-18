@@ -15,7 +15,7 @@ To create a Zonminder-master docker container (name zm)with mysql 8 & msmtp
 
 On the Ubuntu terminal enter the following commands
 
-<code>sudo docker create -t -p 8080:80 --shm-size=4096m --name zm --privileged=true bkjaya1952/docker-zoneminder-master-mysql8:tag</code>
+<code>sudo docker create -t -p 8080:80 --shm-size=4096m --name zm --privileged=true bkjaya1952/docker-zoneminder-master-mysql8:latest</code>
 
 <code>sudo docker start zm</code>
 
