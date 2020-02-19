@@ -48,7 +48,7 @@ RUN chmod 740 /etc/zm/zm.conf \
     && a2enmod cgi \
     && a2enconf zoneminder \
     && a2enmod rewrite \
-    &&  chown -R www-data:www-data /usr/share/zoneminder/ \
+    && chown -R www-data:www-data /usr/share/zoneminder/ \
     && ln -s /usr/bin/msmtp /usr/sbin/sendmail \
     && sed -i "228i ServerName localhost" /etc/apache2/apache2.conf \
     && chown -R www-data:www-data /var/run/zm \
