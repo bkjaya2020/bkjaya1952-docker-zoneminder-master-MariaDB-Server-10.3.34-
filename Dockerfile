@@ -15,7 +15,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update \
     && aapt install -y mysql-server \
-    && arm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 # Configure Zoneminder PPA
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABE4C7F993453843F0AEB8154D0BF748776FFB04 \
@@ -24,13 +24,12 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABE4C7F993453843F0A
 
 RUN apt update && apt install -y msmtp \
     && apt install -y tzdata \
-    && apt install -y supervisor \
-    && arm -rf /var/lib/apt/lists/*
-
+    && apt install -y supervisor 
+   
 
 # Install zoneminder
 RUN apt install-y zoneminder \
-    && arm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 RUN rm /etc/mysql/my.cnf \
     && cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf \
