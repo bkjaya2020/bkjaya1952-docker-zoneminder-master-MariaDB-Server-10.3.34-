@@ -14,7 +14,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 
 RUN apt update \
-    && aapt install -y mysql-server 
+    && apt install -y mysql-server 
  
 
 # Configure Zoneminder PPA
