@@ -28,7 +28,7 @@ RUN apt update && apt install -y msmtp \
    
 
 # Install zoneminder
-RUN apt install-y zoneminder 
+RUN apt install --assume-yes zoneminder 
     
 
 RUN rm /etc/mysql/my.cnf \
