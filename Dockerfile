@@ -10,8 +10,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABE4C7F993453843F0A
     && echo deb http://ppa.launchpad.net/iconnor/zoneminder-master/ubuntu eoan main  > /etc/apt/sources.list.d/zoneminder.list \
     && apt update
     
-RUN apt update && \
-    apt -y install gnupg mysql-server msmtp tzdata supervisor zoneminder && \ 
+RUN apt -y install gnupg mysql-server msmtp tzdata supervisor zoneminder && \ 
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove
 
