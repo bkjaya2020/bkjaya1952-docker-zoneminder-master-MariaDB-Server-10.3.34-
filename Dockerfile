@@ -6,11 +6,12 @@ RUN apt update && \
     apt upgrade --assume-yes
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt -y install zoneminder 1.34
+
     
 RUN apt -y install gnupg mysql-server msmtp tzdata supervisor && \ 
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove
+RUN apt -y install zoneminder 1.34
 
 RUN rm /etc/mysql/my.cnf && \
     cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf && \
