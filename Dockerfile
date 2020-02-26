@@ -8,10 +8,9 @@ RUN apt update && \
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt install -y software-properties-common  
-RUN add-apt-repository ppa:ondrej/php && \
-    add-apt-repository ppa:iconnor/zoneminder-master && \
+RUN add-apt-repository ppa:iconnor/zoneminder-master && \
     apt update && \
-    apt -y install gnupg php7.4 mysql-server msmtp tzdata supervisor zoneminder && \ 
+    apt -y install gnupg mysql-server msmtp tzdata supervisor zoneminder && \ 
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove && \ 
     rm /etc/mysql/my.cnf && \
