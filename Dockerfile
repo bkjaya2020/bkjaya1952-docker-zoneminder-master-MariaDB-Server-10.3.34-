@@ -7,17 +7,18 @@ RUN apt update && \
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-    
-RUN apt -y install gnupg mysql-server msmtp tzdata supervisor && \ 
+RUN apt install -y software-properties-common  
+RUN add-apt-repository ppa:ondrej/php && \
+    add-apt-repository ppa:iconnor/zoneminder-master && \
+    apt update && \
+    apt -y install gnupg php7.4 mysql-server msmtp tzdata supervisor zoneminder && \ 
     rm -rf /var/lib/apt/lists/* && \ 
-    apt -y autoremove
-
-
-RUN rm /etc/mysql/my.cnf && \
+    apt -y autoremove && \ 
+    rm /etc/mysql/my.cnf && \
     cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf && \
     sed -i "15i default_authentication_plugin= mysql_native_password" /etc/mysql/my.cnf && \
     service mysql restart
-RUN apt -y install zoneminder 1.34
+
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
