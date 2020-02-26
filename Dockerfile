@@ -6,11 +6,9 @@ RUN apt update && \
     apt upgrade --assume-yes
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABE4C7F993453843F0AEB8154D0BF748776FFB04 \
-    && echo deb http://ppa.launchpad.net/iconnor/zoneminder-master/ubuntu eoan main  > /etc/apt/sources.list.d/zoneminder.list \
-    && apt update
+RUN apt-y install zoneminder 1.34
     
-RUN apt -y install gnupg mysql-server msmtp tzdata supervisor zoneminder && \ 
+RUN apt -y install gnupg mysql-server msmtp tzdata supervisor && \ 
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove
 
