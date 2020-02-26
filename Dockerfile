@@ -45,3 +45,4 @@ RUN chmod 740 /etc/zm/zm.conf && \
 EXPOSE 80
 COPY startzm.sh /usr/bin/startzm.sh
 RUN chmod 777 /usr/bin/startzm.sh
+CMD ["/usr/bin/supervisord"]
