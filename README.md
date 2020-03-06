@@ -65,3 +65,4 @@ In this case you will have to restrain in using the port 80 in your host for any
 
 Then the zoneminder web panel will be at <code>http://localhost/zm/</code>
 
+
