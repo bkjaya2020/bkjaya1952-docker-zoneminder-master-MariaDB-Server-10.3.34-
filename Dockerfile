@@ -1,5 +1,5 @@
 FROM ubuntu:eoan
-MAINTAINER B.K.Jaya
+MAINTAINER B.K.Jayasundera
 
 # Update base packages
 RUN apt update && \
