@@ -10,7 +10,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt install -y software-properties-common  
 RUN add-apt-repository ppa:iconnor/zoneminder-master && \
     apt update && \
-    apt upgrade zoneminder && \
+    apt upgrade -y zoneminder && \
     apt -y install gnupg mysql-server msmtp tzdata supervisor zoneminder && \ 
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove && \ 
