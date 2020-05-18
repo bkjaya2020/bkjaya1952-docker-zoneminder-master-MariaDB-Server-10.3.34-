@@ -27,11 +27,26 @@ On the Ubuntu terminal enter the following commands
 
 Make changes as follows)
 
+(Configuring Mysql and Changing  root password)
+
+<code>mysql</code>
+
+<code>ALTER USER 'root'@'localhost' IDENTIFIED BY 'yourpassword';</code>
+
+
+<code>FLUSH PRIVILEGES ;</code>
+
+<code>quit</code>
+
+(Creating zm sql data base)
+
 <code>mysql -uroot -p < /usr/share/zoneminder/db/zm_create.sql</code>
 
 <code>mysql</code>
 
-<code>CREATE USER 'zmuser'@localhost IDENTIFIED WITH mysql_native_password BY 'zmpass';</code>
+<code>CREATE USER 'zmuser'@localhost IDENTIFIED BY 'zmpass';</code>
+
+(If CREATE does not work try with ALTER )
 
 <code>GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;</code>
 
