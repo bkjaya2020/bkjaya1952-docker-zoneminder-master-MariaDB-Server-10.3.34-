@@ -15,7 +15,6 @@ RUN add-apt-repository ppa:iconnor/zoneminder-master && \
     apt -y autoremove && \ 
     rm /etc/mysql/my.cnf && \
     cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf && \
-    sed -i "15i default_authentication_plugin= mysql_native_password" /etc/mysql/my.cnf && \
     service mysql restart
 
 
