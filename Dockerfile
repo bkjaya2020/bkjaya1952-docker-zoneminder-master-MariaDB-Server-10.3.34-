@@ -13,8 +13,6 @@ RUN add-apt-repository ppa:iconnor/zoneminder-master && \
     apt -y install gnupg msmtp tzdata supervisor zoneminder && \ 
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove && \ 
-    rm /etc/mysql/my.cnf && \
-    cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf && \
     service mysql restart
 
 
@@ -32,7 +30,6 @@ RUN chmod 740 /etc/zm/zm.conf && \
     a2enmod rewrite && \
     a2enmod headers && \
     a2enmod expires && \
-    chown -R www-data:www-data /usr/share/zoneminder/ && \
     ln -s /usr/bin/msmtp /usr/sbin/sendmail && \
     sed -i "228i ServerName localhost" /etc/apache2/apache2.conf && \
     chown -R www-data:www-data /var/run/zm && \
