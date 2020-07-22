@@ -58,9 +58,6 @@ Make changes as follows)
 
 (Note:- Here use the 'yourpassword' created for 'root'@'localhost' earlier )
 
-<code>mysql -u zmuser -p zm < /usr/share/zoneminder/db/zm_update-1.35.4.sql</code>
-
-( Note:- Use zmpass as the password here )
 
 (zm_update-1.35.4.sql file name may vary depending on the latest zm data base. To find the latest version please refer https://launchpad.net/~iconnor/+archive/ubuntu/zoneminder-master )
 
