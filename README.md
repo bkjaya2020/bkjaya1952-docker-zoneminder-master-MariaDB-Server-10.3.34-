@@ -1,4 +1,4 @@
-# bkjaya1952-docker-zoneminder-master-mysql8:latest
+# bkjaya1952/zoneminder-master-docker-latest
 Zoneminder-master , latest. docker image with Mysql 8 &amp; MSMTP
 
 
@@ -6,7 +6,7 @@ This image has been created on ubuntu:focal with zoneminder-master/ubuntu focal 
 To pull the Repository from the dockerhub
 please refer the following link
 
-https://hub.docker.com/r/bkjaya1952/docker-zoneminder-master-mysql8
+https://hub.docker.com/r/bkjaya1952/zoneminder-master-docker-latest
 
 
 Usage :
@@ -15,7 +15,7 @@ To create a Zonminder-master docker container (name zm)with mysql 8 & msmtp
 
 On the Ubuntu terminal enter the following commands
 
-<code>sudo docker create -t -p 8080:80 --shm-size=4096m --name zm --privileged=true bkjaya1952/docker-zoneminder-master-mysql8:latest</code>
+<code>sudo docker create -t -p 8080:80 --shm-size=4096m --name zm --privileged=true bkjaya1952/zoneminder-master-docker-latest</code>
 
 <code>sudo docker start zm</code>
 
@@ -58,9 +58,6 @@ Make changes as follows)
 
 (Note:- Here use the 'yourpassword' created for 'root'@'localhost' earlier )
 
-
-(zm_update-1.35.4.sql file name may vary depending on the latest zm data base. To find the latest version please refer https://launchpad.net/~iconnor/+archive/ubuntu/zoneminder-master )
-
 <code>dpkg-reconfigure tzdata</code>
 
 Then edit your timezone
@@ -79,7 +76,7 @@ https://bkjaya.wordpress.com/2020/01/15/how-to-build-a-zoneminder-master-docker-
 
 # Note:- If you want your docker container zm to detect ip camera automatically, you will have to use following command when creating the container .
 
-<code>sudo docker create -t -p 80:80 --shm-size=4096m --name zm --network=host --privileged=true bkjaya1952/docker-zoneminder-master-mysql8:latest</code>
+<code>sudo docker create -t -p 80:80 --shm-size=4096m --name zm --network=host --privileged=true bkjaya1952/zoneminder-master-docker-latest</code>
 
 In this case you will have to restrain in using the port 80 in your host for any other purpose when running the zm container.
 
