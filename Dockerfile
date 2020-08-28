@@ -41,6 +41,7 @@ RUN chmod 740 /etc/zm/zm.conf && \
 
 # Expose http port
 EXPOSE 80
+COPY logout.php /usr/share/zoneminder/www/skins/classic/views/logout.php
 COPY startzm.sh /usr/bin/startzm.sh
 RUN chmod 777 /usr/bin/startzm.sh
 CMD ["/usr/bin/supervisord"]
