@@ -60,6 +60,8 @@ Make changes as follows)
 
 (Note:- Here use the 'yourpassword' created for 'root'@'localhost' earlier )
 
+<code>chmod 777 /var/run/zm</code>
+
 <code>dpkg-reconfigure tzdata</code>
 
 Then edit your timezone
