@@ -33,11 +33,14 @@ RUN chmod 740 /etc/zm/zm.conf && \
     a2enmod headers && \
     a2enmod expires && \
     ln -s /usr/bin/msmtp /usr/sbin/sendmail && \
-    sed -i "228i ServerName localhost" /etc/apache2/apache2.conf && \    
+    sed -i "228i ServerName localhost" /etc/apache2/apache2.conf && \
+    chown -R www-data:www-data /var/run/zm && \
+    chmod 777 /var/run/zm && \
     /etc/init.d/apache2 start
-RUN chmod 777 /var/run/zm
-RUN /etc/init.d/apache2 restart
+
 
 # Expose http port
 EXPOSE 80
+COPY startzm.sh /usr/bin/startzm.sh
+RUN chmod 777 /usr/bin/startzm.sh
 CMD ["/usr/bin/supervisord"]
