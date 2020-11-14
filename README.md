@@ -29,40 +29,15 @@ On the Ubuntu terminal enter the following commands
 
 Make changes as follows)
 
-(Configuring Mysql and Changing  root password)
+(Configuring Mysql )
 
-<code>mysql</code>
+<code>firstrun.sh</code>
 
-<code>ALTER USER 'root'@'localhost' IDENTIFIED BY 'yourpassword';</code>
-
-
-<code>FLUSH PRIVILEGES ;</code>
-
-<code>quit</code>
-
-(Creating zm sql data base)
-
-<code>mysql -uroot -p < /usr/share/zoneminder/db/zm_create.sql</code>
-
-<code>mysql</code>
-
-<code>CREATE USER 'zmuser'@localhost IDENTIFIED BY 'zmpass';</code>
-
-(If CREATE does not work try with ALTER )
-
-<code>GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;</code>
-
-<code>FLUSH PRIVILEGES ;</code>
-
-<code>quit</code>
-
-<code>mysqladmin -uroot -p reload</code>
-
-(Note:- Here use the 'yourpassword' created for 'root'@'localhost' earlier )
-
-<code>dpkg-reconfigure tzdata</code>
+The press Enter Key when password prompts apear twice
 
 Then edit your timezone
+
+Enter your  timezone details when prompts apear
 
 <code>exit</code>
 
