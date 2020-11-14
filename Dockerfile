@@ -42,5 +42,7 @@ RUN chmod 740 /etc/zm/zm.conf && \
 # Expose http port
 EXPOSE 80
 COPY startzm.sh /usr/bin/startzm.sh
+COPY firstrun.sh /usr/bin/firstrun.sh
 RUN chmod 777 /usr/bin/startzm.sh
+RUN chmod 777 /usr/bin/firstrun.sh
 CMD ["/usr/bin/supervisord"]
