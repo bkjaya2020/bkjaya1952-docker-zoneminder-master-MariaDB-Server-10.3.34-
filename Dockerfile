@@ -45,4 +45,5 @@ COPY startzm.sh /usr/bin/startzm.sh
 COPY firstrun.sh /usr/bin/firstrun.sh
 RUN chmod 777 /usr/bin/startzm.sh
 RUN chmod 777 /usr/bin/firstrun.sh
+RUN chmod 777 /usr/bin/updatemysql.sh
 CMD ["/usr/bin/supervisord"]
