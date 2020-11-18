@@ -33,11 +33,11 @@ Make changes as follows)
 
 <code>firstrun.sh</code>
 
-The press Enter Key when password prompts apear twice
+The press Enter Key when password prompts appear twice
 
 Then edit your timezone
 
-Enter your  timezone details when prompts apear
+Enter your  timezone details when prompts appear
 
 <code>exit</code>
 
