@@ -41,11 +41,9 @@ Make changes as follows)
 
 <code>http://localhost:8080/zm/</code>
 
-(To use msmtp for emailing please refer https://hub.docker.com/repository/docker/bkjaya1952/docker-zoneminder-master)
+(To use msmtp for emailing please refer https://bkjaya.wordpress.com/2020/12/24/how-to-install-the-latest-zoneminder-master-latest-on-ubuntu-20-04-using-a-docker-image/)
 
-( The procedure of  composing an image can be obtained from the following links
 
-https://bkjaya.wordpress.com/2020/01/15/how-to-build-a-zoneminder-master-docker-image-with-mysql-8-msmtp/  )
 
 # Note:- If you want your docker container zm to detect ip camera automatically, you will have to use following command when creating the container .
 
