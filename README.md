@@ -33,7 +33,7 @@ Make changes as follows)
 
 (Configuring Mysql )
 
-<code>firstrun.sh</code>
+<code>updatemysql.sh</code>
 
 <code>exit</code>
 
