@@ -23,22 +23,6 @@ Note:- Replace Asia/Colombo  with your Time Zone
 
 <code>sudo docker start zm</code>
 
-(You will have to configure the running zm container for mysql 8 ,zm data base during the first run .)
-
-<code>sudo docker exec -t -i zm /bin/bash</code>
-
-(Now  you will be with in the zm container.
-
-Make changes as follows)
-
-(Configuring Mysql )
-
-<code>updatemysql.sh</code>
-
-<code>exit</code>
-
-<code>sudo docker restart zm</code>
-
 <code>http://localhost:8080/zm/</code>
 
 (To use msmtp for emailing please refer https://bkjaya.wordpress.com/2020/12/24/how-to-install-the-latest-zoneminder-master-latest-on-ubuntu-20-04-using-a-docker-image/)
