@@ -12,17 +12,13 @@ RUN add-apt-repository ppa:iconnor/zoneminder-master && \
     apt update && \
     apt -y install gnupg msmtp tzdata supervisor zoneminder && \ 
     rm -rf /var/lib/apt/lists/* && \ 
-    apt -y autoremove && \ 
-    rm /etc/mysql/my.cnf && \
-    cp /etc/mysql/mysql.conf.d/mysqld.cnf  /etc/mysql/my.cnf && \ 
+    apt -y autoremove && \    
     service mysql restart
-
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
 # Set our volumes before we attempt to configure apache
 VOLUME /var/cache/zoneminder/events /var/lib/mysql /var/log/zm /var/run/zm
-
 
 RUN chmod 740 /etc/zm/zm.conf && \
     chown root:www-data /etc/zm/zm.conf && \
@@ -38,13 +34,8 @@ RUN chmod 740 /etc/zm/zm.conf && \
     chmod 777 /var/run/zm && \
     /etc/init.d/apache2 start
 
-
 # Expose http port
 EXPOSE 80
 COPY startzm.sh /usr/bin/startzm.sh
-COPY firstrun.sh /usr/bin/firstrun.sh
-COPY updatemysql.sh /usr/bin/updatemysql.sh
 RUN chmod 777 /usr/bin/startzm.sh
-RUN chmod 777 /usr/bin/firstrun.sh
-RUN chmod 777 /usr/bin/updatemysql.sh
 CMD ["/usr/bin/supervisord"]
