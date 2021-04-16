@@ -45,6 +45,7 @@ RUN chmod 740 /etc/zm/zm.conf && \
 
 # Expose http port
 EXPOSE 80
+COPY zm_create.sql /usr/share/zoneminder/db/zm_create.sql
 COPY startzm.sh /usr/bin/startzm.sh
 COPY firstrun.sh /usr/bin/firstrun.sh
 COPY updatemysql.sh /usr/bin/updatemysql.sh
