@@ -12,7 +12,6 @@ RUN apt install -y software-properties-common
 RUN add-apt-repository ppa:iconnor/zoneminder-master && \
     apt update && \
     apt -y install gnupg msmtp tzdata supervisor && \ 
-    apt -y install php && \
     apt -y -f install zoneminder && \
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove  && \       
