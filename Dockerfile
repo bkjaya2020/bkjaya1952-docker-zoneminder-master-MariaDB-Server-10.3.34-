@@ -8,12 +8,11 @@ RUN apt update && \
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt install -y software-properties-common 
-RUN add-apt-repository ppa:ondrej/php
 
 RUN add-apt-repository ppa:iconnor/zoneminder-master && \
     apt update && \
     apt -y install gnupg msmtp tzdata supervisor && \ 
-    apt -y install php7.4 && \
+    apt -y install php && \
     apt -y -f install zoneminder && \
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove  && \       
