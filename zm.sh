@@ -1,3 +1,4 @@
+add-apt-repository ppa:iconnor/zoneminder-1.34 
 apt -y install zoneminder 
 /etc/init.d/mysql start
 cp zm_create.sql /usr/share/zoneminder/db/zm_create.sql
