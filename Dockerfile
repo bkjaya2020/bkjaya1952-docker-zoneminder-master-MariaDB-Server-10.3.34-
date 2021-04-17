@@ -50,7 +50,6 @@ COPY updatemysql.sh /usr/bin/updatemysql.sh
 RUN chmod 777 /usr/bin/startzm.sh
 RUN chmod 777 /usr/bin/firstrun.sh
 RUN chmod 777 /usr/bin/updatemysql.sh
-RUN firstrun.sh
 CMD ["/usr/bin/supervisord"]
 
 
