@@ -6,7 +6,7 @@ RUN apt update && \
     apt upgrade --assume-yes
 
 ARG DEBIAN_FRONTEND=noninteractive
-COPY zoneminder_1.34.16-focal1_amd64.deb /zoneminder_1.34.16-focal1_amd64.deb
+
 
 
 RUN apt install -y software-properties-common  
