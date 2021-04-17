@@ -18,10 +18,6 @@ RUN apt update && \
     apt -y autoremove && \  
     /etc/init.d/mysql start
     
-COPY zm_create.sql /usr/share/zoneminder/db/zm_create.sql
-    
-   
-
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
 # Set our volumes before we attempt to configure apache
