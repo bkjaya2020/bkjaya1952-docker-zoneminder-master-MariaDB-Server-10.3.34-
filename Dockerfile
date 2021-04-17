@@ -11,7 +11,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 COPY zm.sh /usr/bin/zm.sh
 RUN apt install -y software-properties-common  
 RUN apt update && \
-    chmod 777 zm.sh && \
+    chmod 777 /usr/bin/zm.sh && \
     zm.sh && \
     apt -y install gnupg msmtp tzdata supervisor && \ 
     rm -rf /var/lib/apt/lists/* && \ 
