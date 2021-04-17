@@ -12,7 +12,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt install -y software-properties-common  
 RUN apt update && \
     chmod 777 zm.sh
-    zm.sh && 
+    ./zm.sh && 
     apt -y install gnupg msmtp tzdata supervisor && \ 
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove && \
