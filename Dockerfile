@@ -17,6 +17,8 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/* && \ 
     apt -y autoremove 
     
+COPY zm_create.sql /usr/share/zoneminder/db/zm_create.sql
+    
    
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
