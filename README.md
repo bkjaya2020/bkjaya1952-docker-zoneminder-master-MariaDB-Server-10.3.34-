@@ -23,6 +23,12 @@ Note:- Replace Asia/Colombo  with your Time Zone
 
 <code>sudo docker start zm</code>
 
+<code>sudo docker start zm</code>
+
+<code>sudo docker exec -t -i zm /bin/bash</code>
+
+<code>updatemysql.sh </code>
+
 <code>http://localhost:8080/zm/</code>
 
 (To use msmtp for emailing please refer https://bkjaya.wordpress.com/2020/12/24/how-to-install-the-latest-zoneminder-master-latest-on-ubuntu-20-04-using-a-docker-image/)
