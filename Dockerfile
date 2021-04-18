@@ -47,8 +47,6 @@ COPY updatemysql.sh /usr/bin/updatemysql.sh
 RUN chmod 777 /usr/bin/startzm.sh
 RUN chmod 777 /usr/bin/firstrun.sh
 RUN chmod 777 /usr/bin/updatemysql.sh
-RUN /etc/init.d/mysql start
-RUN /usr/bin/updatemysql.sh
 CMD ["/usr/bin/supervisord"]
 
 
