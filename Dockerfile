@@ -20,9 +20,6 @@ RUN apt update && \
     
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
-# Set our volumes before we attempt to configure apache
-VOLUME /var/cache/zoneminder/events /var/lib/mysql /var/log/zm /var/run/zm
-
 
 RUN chmod 740 /etc/zm/zm.conf && \
     chown root:www-data /etc/zm/zm.conf && \
@@ -34,8 +31,6 @@ RUN chmod 740 /etc/zm/zm.conf && \
     a2enmod expires && \
     ln -s /usr/bin/msmtp /usr/sbin/sendmail && \
     sed -i "228i ServerName localhost" /etc/apache2/apache2.conf && \
-    chown -R www-data:www-data /var/run/zm && \
-    chmod 777 /var/run/zm && \
     /etc/init.d/apache2 start 
     
     
