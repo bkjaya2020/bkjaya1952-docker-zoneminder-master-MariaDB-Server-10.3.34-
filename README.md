@@ -1,5 +1,5 @@
 # bkjaya1952/zoneminder-master-docker-latest
-Zoneminder-master , latest. docker image with Mysql 8 &amp; MSMTP
+Zoneminder-master , latest. docker image with MariaDB Server 10.3.34 &amp; MSMTP
 
 Based on Isaac Connor's ZoneMinder Master Snapshots at https://launchpad.net/~iconnor/+archive/ubuntu/zoneminder-master
 
