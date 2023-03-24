@@ -6,7 +6,7 @@ RUN apt update && \
     apt upgrade --assume-yes
 
 ARG DEBIAN_FRONTEND=noninteractive
-
+RUN export SUDO_FORCE_REMOVE=yes
 
 
 COPY zm.sh /usr/bin/zm.sh
@@ -16,7 +16,8 @@ RUN apt update && \
     zm.sh && \
     apt -y install gnupg msmtp tzdata supervisor && \ 
     rm -rf /var/lib/apt/lists/* && \ 
-    /etc/init.d/mysql start
+   apt -y autoremove && \ 
+   /etc/init.d/mysql start
     
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
