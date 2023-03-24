@@ -16,6 +16,7 @@ RUN apt update && \
     zm.sh && \
     apt -y install gnupg msmtp tzdata supervisor && \ 
     rm -rf /var/lib/apt/lists/* && \ 
+    apt -f -y install \
    apt -y autoremove && \ 
    /etc/init.d/mysql start
     
