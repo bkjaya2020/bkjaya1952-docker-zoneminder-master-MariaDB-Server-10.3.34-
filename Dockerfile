@@ -9,7 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 
 COPY zm.sh /usr/bin/zm.sh
-RUN apt install -f -y software-properties-common  
+RUN apt install -y software-properties-common  
 RUN apt update && \
     chmod 777 /usr/bin/zm.sh && \
     zm.sh && \
