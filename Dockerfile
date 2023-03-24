@@ -6,7 +6,7 @@ RUN apt update && \
     apt upgrade --assume-yes
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN export SUDO_FORCE_REMOVE=yes
+
 
 
 COPY zm.sh /usr/bin/zm.sh
