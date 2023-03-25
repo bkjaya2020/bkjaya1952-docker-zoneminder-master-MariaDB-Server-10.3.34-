@@ -45,3 +45,6 @@ RUN chmod 777 /usr/bin/updatemysql.sh
 CMD ["/usr/bin/supervisord"]
 
 
+
+
+
