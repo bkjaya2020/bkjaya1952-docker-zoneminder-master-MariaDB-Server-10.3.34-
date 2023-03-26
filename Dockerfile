@@ -2,8 +2,8 @@ FROM ubuntu:focal
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
-RUN apt update 
-    
+RUN apt update && \
+    apt upgrade --assume-yes
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -14,10 +14,9 @@ RUN apt update && \
     chmod 777 /usr/bin/zm.sh && \
     zm.sh && \
     apt -y install gnupg msmtp tzdata supervisor && \ 
-    1pt install -f && \
     rm -rf /var/lib/apt/lists/* && \ 
-   apt -y autoremove && \ 
-   /etc/init.d/mysql start
+    apt -y autoremove && \  
+    /etc/init.d/mysql start
     
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
@@ -32,7 +31,7 @@ RUN chmod 740 /etc/zm/zm.conf && \
     a2enmod expires && \
     ln -s /usr/bin/msmtp /usr/sbin/sendmail && \
     sed -i "228i ServerName localhost" /etc/apache2/apache2.conf && \
-    /etc/init.d/apache2 start
+    /etc/init.d/apache2 start 
     
     
 # Expose http port
@@ -44,5 +43,3 @@ RUN chmod 777 /usr/bin/startzm.sh
 RUN chmod 777 /usr/bin/firstrun.sh
 RUN chmod 777 /usr/bin/updatemysql.sh
 CMD ["/usr/bin/supervisord"]
-
-
