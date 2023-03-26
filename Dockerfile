@@ -14,9 +14,11 @@ RUN apt update && \
     chmod 777 /usr/bin/zm.sh && \
     zm.sh && \
     apt -y install gnupg msmtp tzdata supervisor && \ 
-    1pt install -f \
+    1pt install -f && \
     rm -rf /var/lib/apt/lists/* && \ 
    apt -y autoremove && \ 
+   rm /etc/mysql/my.cnf && \
+   cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf && \
    /etc/init.d/mysql start
     
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
