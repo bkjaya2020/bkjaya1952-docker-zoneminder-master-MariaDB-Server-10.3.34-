@@ -2,7 +2,7 @@ FROM ubuntu:focal
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
-RUN apt update && \
+RUN apt update 
     
 
 ARG DEBIAN_FRONTEND=noninteractive
