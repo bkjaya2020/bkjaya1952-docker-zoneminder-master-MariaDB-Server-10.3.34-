@@ -1,9 +1,9 @@
-FROM ubuntu:jammy
+FROM ubuntu:focal
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
 RUN apt update && \
-    apt upgrade --assume-yes
+    
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -17,8 +17,6 @@ RUN apt update && \
     1pt install -f && \
     rm -rf /var/lib/apt/lists/* && \ 
    apt -y autoremove && \ 
-   rm /etc/mysql/my.cnf && \
-   cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf && \
    /etc/init.d/mysql start
     
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
@@ -34,7 +32,7 @@ RUN chmod 740 /etc/zm/zm.conf && \
     a2enmod expires && \
     ln -s /usr/bin/msmtp /usr/sbin/sendmail && \
     sed -i "228i ServerName localhost" /etc/apache2/apache2.conf && \
-    /etc/init.d/apache2 start 
+    /etc/init.d/apache2 start
     
     
 # Expose http port
