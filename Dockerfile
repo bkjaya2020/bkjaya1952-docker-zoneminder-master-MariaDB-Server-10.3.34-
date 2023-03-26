@@ -1,4 +1,4 @@
-FROM ubuntu:lunar
+FROM ubuntu:jammy
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
