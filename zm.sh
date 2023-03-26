@@ -1,4 +1,4 @@
-add-apt-repository ppa:iconnor/zoneminder-master 
+add-apt-repository ppa:iconnor/zoneminder-master- 1.37.35
 apt -y install mariadb-server
 apt -y install zoneminder 
 /etc/init.d/mysql start
