@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:lunar
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
