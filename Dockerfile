@@ -1,4 +1,4 @@
-FROM ubuntu:Kinetic
+FROM ubuntu:22.10
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
