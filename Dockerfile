@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:Kinetic
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
