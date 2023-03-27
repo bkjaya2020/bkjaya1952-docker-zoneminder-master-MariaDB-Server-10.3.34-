@@ -2,8 +2,8 @@ FROM ubuntu:Kinetic
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
-RUN apt update && \
-    apt upgrade --assume-yes
+RUN apt update 
+    
 
 ARG DEBIAN_FRONTEND=noninteractive
 
