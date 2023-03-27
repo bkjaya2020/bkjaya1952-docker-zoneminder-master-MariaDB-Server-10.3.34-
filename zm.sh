@@ -1,6 +1,5 @@
-sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu focal main'
-add-apt-repository 'deb [arch=amd64,arm64,ppc64el,s390x] http://archive.mariadb.org/mariadb-10.5.9/repo/ubuntu/ focal main main/debug'
-apt -y install mariadb-server
+apt-get install mariadb-server=10.3.14-1 mariadb-client=10.3.14-1 libmariadb3=10.3.14-1 mariadb-backup=10.3.14-1 mariadb-common=10.3.14-1
+
 add-apt-repository ppa:iconnor/zoneminder-master 
 apt -y install zoneminder 
 /etc/init.d/mysql start
