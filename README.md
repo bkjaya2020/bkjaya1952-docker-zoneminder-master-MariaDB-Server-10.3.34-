@@ -4,7 +4,7 @@ Zoneminder-master , latest. docker image with mysql-Server8 &; MSMTP
 Based on Isaac Connor's ZoneMinder Master Snapshots at https://launchpad.net/~iconnor/+archive/ubuntu/zoneminder-master
 
 
-This image has been created on ubuntu:22.10 with zoneminder-master/ubuntu 22.10 main
+This image has been created on ubuntu:22.10 with zoneminder-master/ubuntu-jammy main
 To pull the Repository from the dockerhub
 please refer the following link
 
