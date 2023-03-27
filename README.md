@@ -1,10 +1,10 @@
 # bkjaya1952/zoneminder-master-docker-latest
-Zoneminder-master , latest. docker image with MariaDB Server 10.3.34 &amp; MSMTP
+Zoneminder-master , latest. docker image with mysql-Server8 &; MSMTP
 
 Based on Isaac Connor's ZoneMinder Master Snapshots at https://launchpad.net/~iconnor/+archive/ubuntu/zoneminder-master
 
 
-This image has been created on ubuntu:focal with zoneminder-master/ubuntu focal main
+This image has been created on ubuntu:22.10 with zoneminder-master/ubuntu 22.10 main
 To pull the Repository from the dockerhub
 please refer the following link
 
