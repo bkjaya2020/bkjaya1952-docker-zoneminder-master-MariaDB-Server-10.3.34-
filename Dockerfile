@@ -10,11 +10,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 COPY zm.sh /usr/bin/zm.sh
 RUN apt install -y software-properties-common  
-RUN apt update && \
-    chmod 777 /usr/bin/zm.sh && \
-    zm.sh && \
-    rm -rf /var/lib/apt/lists/* && \ 
-    apt -y autoremove    
+RUN chmod 777 /usr/bin/zm.sh && \
+    zm.sh 
     
     
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
