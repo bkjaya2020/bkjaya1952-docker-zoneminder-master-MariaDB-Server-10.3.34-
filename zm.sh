@@ -1,6 +1,4 @@
 apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
-add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.biznetgio.com/mariadb/repo/10.5/ubuntu focal main'
-apt update
 apt -y install mariadb-server
 add-apt-repository ppa:iconnor/zoneminder-master 
 apt -y install zoneminder 
