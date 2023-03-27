@@ -1,5 +1,4 @@
-apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
-apt -y install mariadb-server
+apt -y install mysql-server
 add-apt-repository ppa:iconnor/zoneminder-master 
 apt -y install zoneminder 
 /etc/init.d/mysql start
