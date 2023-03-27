@@ -7,3 +7,4 @@ mysql -e "ALTER USER 'zmuser'@localhost IDENTIFIED BY 'zmpass';"
 mysql -e "GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;"
 mysql -e "FLUSH PRIVILEGES ;"
 mysqladmin -uroot --password="" reload 2>/dev/null
+zmupdate.pl
