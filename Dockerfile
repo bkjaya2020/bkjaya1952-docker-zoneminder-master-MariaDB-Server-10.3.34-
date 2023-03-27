@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
@@ -13,10 +13,9 @@ RUN apt install -y software-properties-common
 RUN apt update && \
     chmod 777 /usr/bin/zm.sh && \
     zm.sh && \
-    apt -y install gnupg msmtp tzdata supervisor && \ 
     rm -rf /var/lib/apt/lists/* && \ 
-    apt -y autoremove && \  
-    /etc/init.d/mysql start
+    apt -y autoremove    
+    
     
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
  
