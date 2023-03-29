@@ -1,5 +1,4 @@
-FROM bkjaya1952-docker-zoneminder-master-MariaDB-Server-10.3.34-/.github/workflows/u1622023main.yml
-# FROM ubuntu:focal
+FROM ubuntu:focal
 MAINTAINER B.K.Jayasundera
 
 # Update base packages
