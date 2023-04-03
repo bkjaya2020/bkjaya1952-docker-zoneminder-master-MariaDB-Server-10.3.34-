@@ -1,6 +1,6 @@
 add-apt-repository ppa:iconnor/zoneminder-master
 apt -y install msmtp tzdata gnupg supervisor
-apt -y install maridb-server
+apt -y install mariadb-server
 apt -y install zoneminder
 /etc/init.d/mysql start
 mysql -e "ALTER USER 'zmuser'@localhost IDENTIFIED BY 'zmpass';"
