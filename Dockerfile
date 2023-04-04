@@ -6,6 +6,11 @@ RUN apt update
     
 
 ARG DEBIAN_FRONTEND=noninteractive
+RUN apt install -y software-properties-common 
+
+RUN apt install -y policykit-1 apt-utils 
+COPY zm_create.sql /usr/share/zoneminder/db/zm_create.sql
+RUN chmod 777 /usr/share/zoneminder/db/zm_create.sql
 
 
 COPY zm.sh /usr/bin/zm.sh
