@@ -17,9 +17,7 @@ To create a Zonminder-master docker container (name zm)with mysql 8 & msmtp
 
 On the Ubuntu terminal enter the following commands
 
-<code>sudo docker create -t -p 8080:80 --name zm --privileged=true -e TZ=Asia/Colombo bkjaya1952/zoneminder-master-docker-latest</code>
-
-Note:- Replace Asia/Colombo  with your Time Zone 
+<code>sudo docker create -t -p 8080:80 --name zm --privileged=true bkjaya1952/zoneminder-master-docker-latest</code>
 
 <code>sudo docker start zm</code>
 
@@ -40,7 +38,7 @@ Note:- Replace Asia/Colombo  with your Time Zone
 
 # Note:- If you want your docker container zm to detect ip camera automatically, you will have to use following command when creating the container .
 
-<code>sudo docker create -t -p 80:80 --name zm --network=host --privileged=true -e TZ=Asia/Colombo bkjaya1952/zoneminder-master-docker-latest</code>
+<code>sudo docker create -t -p 80:80 --name zm --network=host --privileged=true bkjaya1952/zoneminder-master-docker-latest</code>
 
 In this case you will have to restrain in using the port 80 in your host for any other purpose when running the zm container.
 
